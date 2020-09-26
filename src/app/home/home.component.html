@@ -6,19 +6,31 @@
 </h4>
 <div class="main" align="center">
 
-  <img src="../../assets/logos/Amway-logo-love.png" alt="amway-image" height="75">
+  <img src="../../assets/logos/Amway-logo-love.png" alt="amway-image" height="100">
   <br />
   <img src="../../assets/images/satish-indira.jpeg" alt="our-image" height="250">
   <br />
   <br />
   <br />
 
-  <p>
+  <p *ngIf="!showJoinMeet">
+    <button class="btn-primary" (click)="navigateToCreate()">Create Meeting</button>
+  </p>
+  <p *ngIf="!showJoinMeet">
+    <button class="btn-primary" (click)="joinMeeting()">Join a Meeting</button>
+  </p>
+  <p align="center" *ngIf="showJoinMeet">
     <label>
       <input type="text" placeholder=" " [(ngModel)]="link">
       <p>Enter the Meeting Link</p>
     </label>
+    <span class="text-danger" *ngIf="emptyLink">Please Enter Some Link to Proceed</span>
+    <br />
+    <br />
+    <button [className]="link === '' ? 'btn-primary btn-disabled' : 'btn-primary'" (click)="attend()">Attend Meeting</button>
+    <br />
+    <br />
+    <button class="btn-primary btn-def" (click)="joinMeeting()">Cancel</button>
   </p>
-  <button class="btn-primary" (click)="attend()">Attend Meeting</button>
 
 </div>

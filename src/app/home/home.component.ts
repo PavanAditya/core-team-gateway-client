@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   public link = '';
+  public emptyLink: boolean;
+  public showJoinMeet = false;
 
   constructor(
     private router: Router
@@ -17,8 +19,20 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public navigateToCreate(): void {
+    this.router.navigate(['/newmeeting']);
+  }
+
   public attend(): void {
-    this.router.navigate(['attendmeeting', this.link.split('/')[this.link.split('/').length - 1]]);
+    if (this.link !== '') {
+      this.router.navigate(['attendmeeting', this.link.split('/')[this.link.split('/').length - 1]]);
+    } else {
+      this.emptyLink = true;
+    }
+  }
+
+  public joinMeeting(): void {
+    this.showJoinMeet = !this.showJoinMeet;
   }
 
 }

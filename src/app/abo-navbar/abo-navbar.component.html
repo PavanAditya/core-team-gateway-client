@@ -1,24 +1,25 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="../../assets/logos/amway-icon.png" class="logo-img" alt="amway-image"  (click)="navigateTo('home')">
   <a class="navbar-brand" (click)="navigateTo('home')"><b>Satish & Indira Core Team</b></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a [className]="!routeName('home') ? 'nav-item nav-link' : 'nav-item nav-link active'"
-        (click)="navigateTo('home')">Home</a>
-      <a [className]="!routeName('coremembers') ? 'nav-item nav-link' : 'nav-item nav-link active'"
-        (click)="navigateTo('coremembers')">Core Members</a>
-      <a [className]="!routeName('allmeetings') ? 'nav-item nav-link' : 'nav-item nav-link active'"
-        (click)="navigateTo('allmeetings')">Meetings</a>
-      <a [className]="!routeName('meetingattendees') ? 'nav-item nav-link' : 'nav-item nav-link active'"
-        (click)="navigateTo('meetingattendees')">Meeting Attendees</a>
-      <a [className]="!routeName('newmeeting') ? 'nav-item nav-link' : 'nav-item nav-link active'"
-        (click)="navigateTo('newmeeting')">New Meeting</a>
-      <a [className]="!routeName('addcoremember') ? 'nav-item nav-link' : 'nav-item nav-link active'"
-        (click)="navigateTo('addcoremember')">New Core Member</a>
-      <a *ngIf="checkLocalStorage()" class="nav-item nav-link" (click)="logout()">Log Out</a>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li [className]="!routeName('home') ? 'nav-item' : 'nav-item active'" (click)="navigateTo('home')"><a
+          class="nav-link">Home</a></li>
+      <li [className]="!routeName('coremembers') ? 'nav-item' : 'nav-item active'" (click)="navigateTo('coremembers')">
+        <a class="nav-link">Core Members</a></li>
+      <li [className]="!routeName('allmeetings') ? 'nav-item' : 'nav-item active'" (click)="navigateTo('allmeetings')">
+        <a class="nav-link">Meetings</a></li>
+      <li [className]="!routeName('meetingattendees') ? 'nav-item' : 'nav-item active'"
+        (click)="navigateTo('meetingattendees')"><a class="nav-link">Meeting Attendees</a></li>
+      <li [className]="!routeName('newmeeting') ? 'nav-item' : 'nav-item active'" (click)="navigateTo('newmeeting')"><a
+          class="nav-link">New Meeting</a></li>
+      <li [className]="!routeName('addcoremember') ? 'nav-item' : 'nav-item active'"
+        (click)="navigateTo('addcoremember')"><a class="nav-link">New Core Member</a></li>
+      <li *ngIf="checkLocalStorage()" class="nav-item" (click)="logout()"><a class="nav-link">Log Out</a></li>
+    </ul>
   </div>
 </nav>

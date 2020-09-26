@@ -68,3 +68,16 @@ label input:not(:focus) + p {
   background-color: #074984;
   cursor: pointer;
 }
+
+.btn-disabled {
+  background-color: #319efd !important;
+}
+
+.btn-def {
+  width: 250px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 0 2px 15px rgb(58, 54, 54, 0.5);
+  border: 1px solid grey;
+  background-color: grey;
+}
