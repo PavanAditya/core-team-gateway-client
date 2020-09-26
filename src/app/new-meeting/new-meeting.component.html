@@ -1,0 +1,47 @@
+<app-abo-navbar></app-abo-navbar>
+
+<br />
+<h4 align="center"><b>Add New Meeting</b></h4>
+<div class="main">
+  <div *ngIf="!admin" class="login-pane" align="center">
+    <p>
+      <label>
+        <input type="text" placeholder="" [(ngModel)]="abo">
+        <p>Enter your ABO Number</p>
+      </label>
+    </p>
+    <p *ngIf="accessPresent === false" class="text-danger">Sorry You don't have access to Add a Meeting</p>
+    <button class="btn-primary" (click)="checkAccess()">Check Access</button>
+  </div>
+  <div *ngIf="admin" class="login-pane" align="center">
+    <p>
+      <label>
+        <input type="text" placeholder=" " [(ngModel)]="name">
+        <p>Enter Name of Meeting</p>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="text" placeholder=" " [(ngModel)]="meetingDate">
+        <p>Enter date of Meeting</p>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="text" placeholder=" " [(ngModel)]="meetingLink">
+        <p>Enter Zoom Link of the Meeting</p>
+      </label>
+    </p>
+    <p *ngIf="createError" class="text-danger">Meeting Link Creation Failed. Please try again.</p>
+    <p *ngIf="created" class="text-success" id="meetadd">
+      Meeting Link Created successfully
+      <br />
+      <a [href]="createdMeetingLink" target="_">{{ createdMeetingLink }}</a>
+      <br />
+      <br />
+      <button class="btn-success" (click)="clickToCopy(createdMeetingLink)">Copy Link</button>
+    </p>
+    <button *ngIf="!created" class="btn-primary" (click)="createMeetingLink()" [disabled]="creating">Create Meeting</button>
+    <button *ngIf="created" class="btn-primary" (click)="clearAll()" [disabled]="creating">Clear</button>
+  </div>
+</div>

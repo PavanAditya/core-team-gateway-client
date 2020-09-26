@@ -1,0 +1,37 @@
+<app-abo-navbar></app-abo-navbar>
+
+<br />
+<h4 align="center"><b>Add New Core Member</b></h4>
+<div class="main">
+  <div *ngIf="!admin" class="login-pane" align="center">
+    <p>
+      <label>
+        <input type="number" placeholder="" [(ngModel)]="abo">
+        <p>Enter your ABO Number</p>
+      </label>
+    </p>
+    <p *ngIf="noAccessPresent" class="text-danger">Sorry You don't have access to add a new Core Member</p>
+    <button class="btn-primary" (click)="checkAccess()">Check Access</button>
+  </div>
+  <div *ngIf="admin" class="login-pane" align="center">
+    <p>
+      <label>
+        <input type="text" placeholder=" " [(ngModel)]="name">
+        <p>Enter Name of New Core Member</p>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="text" placeholder=" " [(ngModel)]="aboNum">
+        <p>Enter ABO Number of New Core Member</p>
+      </label>
+    </p>
+    <p *ngIf="canMakeAdmin">
+      <input type="checkbox" id="makeAdmin" name="makeAdmin" value="true" [(ngModel)]="makeAdmin">
+      &nbsp;<label for="makeAdmin">Make this Core Member an Admin</label><br>
+    </p>
+    <p *ngIf="addError" class="text-danger">Core Member Adding Failed. Please try again.</p>
+    <p *ngIf="added" class="text-success">Core Member Added successfully under {{ addedAbo }}</p>
+    <button class="btn-primary" (click)="addCoreMember()" [disabled]="adding">Add Core Member</button>
+  </div>
+</div>

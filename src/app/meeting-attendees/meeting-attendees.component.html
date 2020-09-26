@@ -1,0 +1,35 @@
+<app-abo-navbar></app-abo-navbar>
+
+<br />
+<h4 align="center"><b>Meeting Attendees List</b></h4>
+
+<div class="main">
+  <div *ngIf="!admin" class="login-pane" align="center">
+    <p>
+      <label>
+        <input type="text" placeholder="" [(ngModel)]="abo">
+        <p>Enter your ABO Number</p>
+      </label>
+    </p>
+    <p *ngIf="accessPresent === false" class="text-danger">Sorry You don't have access to view the Meeting Attendees List</p>
+    <button class="btn-primary" (click)="checkAccess()">Check Access</button>
+  </div>
+  <div *ngIf="admin" class="login-pane" align="center">
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Attendee Name</th>
+          <th>Reffered By</th>
+          <th>Meeting Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let attendee of attendeesList">
+          <td data-column="Meeting Name">{{attendee?.name}}</td>
+          <td data-column="Meeting Date">{{attendee?.refferedAboNum}}</td>
+          <td data-column="Meeting Link"><a [href]="getLink(attendee?.attendedMeetingId)" target="_">{{getLink(attendee?.attendedMeetingId)}}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

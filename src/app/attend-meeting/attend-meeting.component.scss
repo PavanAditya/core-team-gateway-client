@@ -1,0 +1,74 @@
+.bg-dark {
+  background-color: #074984 !important;
+  b {
+    color: white;
+  }
+}
+
+.main {
+  height: 80vh;
+}
+
+label {
+  position: relative;
+}
+
+label input {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: black;
+  background: transparent;
+
+  padding: 1rem 1.2rem;
+  min-width: 24rem;
+
+  border-radius: 0.2rem;
+  border: 2px solid #7a7a7a56;
+
+  transition: border-color 0.2s;
+}
+
+label input:focus {
+  border-color: #ff4754;
+}
+
+label p {
+  color: grey;
+  font-weight: bold;
+  font-size: 1rem;
+  user-select: none;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  margin-left: 0.8rem;
+  padding: 0 0.4rem;
+
+  transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+
+label input:focus + p,
+label input:not(:placeholder-shown) + p {
+  top: -15px;
+  font-size: 0.9rem;
+  color: grey;
+}
+
+label input:not(:focus) + p {
+  color: #7a7a7a56;
+}
+
+.btn-primary {
+  width: 250px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 0 2px 15px rgb(58, 54, 54, 0.5);
+  border: 1px solid #074984;
+  background-color: #074984;
+  cursor: pointer;
+}
+
+#makeAdmin {
+  cursor: pointer;
+}

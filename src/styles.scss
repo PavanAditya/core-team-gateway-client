@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.navbar {
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn-primary {
+  width: 250px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 0 2px 15px rgb(58, 54, 54, 0.5);
+  border: 1px solid #074984;
+  background-color: #074984;
+}
+
+.btn-success {
+  width: 100px;
+  height: 25px;
+  border-radius: 25px;
+  box-shadow: 0 2px 15px rgb(58, 54, 54, 0.5);
+  border: 1px solid green;
+  background-color: green;
+}
+
+.btn-primary:disabled {
+  background-color: #5cb3ff;
+}
+
+.btn-primary:hover {
+  background-color: #04345e;
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: initial;
+}
+
+.btn-success:focus {
+  outline: none;
+  box-shadow: initial;
+}
+
+.text-danger {
+  color: rgb(199, 30, 0);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.text-success {
+  color: green;
+  font-weight: 800;
+  font-size: 15px;
+  margin: 10px;
+  word-break: break-all;
+}

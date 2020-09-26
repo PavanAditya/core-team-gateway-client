@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand"><b>Satish & Indira Core Team</b></a>
+</nav>
+
+<br />
+<div class="main" align="center">
+  <img src="../../assets/logos/Amway-logo.png" alt="amway-logo" height="75">
+  <br />
+  <br />
+  <h4 align="center"><b>Attend A New Meeting</b></h4>
+  <br />
+  <br />
+  <div class="login-pane" align="center">
+    <p>
+      <label>
+        <input type="text" placeholder=" " [(ngModel)]="name">
+        <p>Enter Your Name</p>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="text" placeholder=" " [(ngModel)]="refferedAboNum">
+        <p>Enter Refferal ABO Number</p>
+      </label>
+    </p>
+    <p *ngIf="createError" class="text-danger">
+      Given Referral ABO Number is Invalid or doesn't have the access to this Meeting. <br />
+      <b>Please Check the Refferral Number and try again.</b>
+    </p>
+    <p *ngIf="created" class="text-success" id="meetadd">
+      Meeting Access Provided.
+      <br />
+      <a [href]="createdMeetingLink" target="_">{{ createdMeetingLink }}</a>
+      <br />
+      <br />
+      <button class="btn-success" (click)="clickToCopy(createdMeetingLink)">Copy Link</button>
+    </p>
+    <button *ngIf="!created" class="btn-primary" (click)="addAttendee()" [disabled]="creating">Join
+      Meeting</button>
+    <button *ngIf="created" class="btn-primary" (click)="clearAll()" [disabled]="creating">Clear</button>
+  </div>
+</div>

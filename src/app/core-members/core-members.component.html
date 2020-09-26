@@ -1,0 +1,23 @@
+<app-abo-navbar></app-abo-navbar>
+
+<h2 class="abo-page-title" align="center">
+  <b>Our Team Core Members</b>
+</h2>
+
+<div class="main row">
+  <div class="abo col-sm-3" *ngFor="let member of coreMembersList" align="center">
+    <div class="abo-container">
+      <div class="abo-shape">
+        <div class="abo-image"></div>
+      </div>
+      <h3 class="abo-name">{{ member?.name }}</h3>
+      <h3 class="abo-title">{{ member?.aboNum }}</h3>
+      <br />
+      <p>
+        {{ member?.admin ? 'Admin' : '' }}
+        <br />
+        {{ 'Added By: ' +  member?.addedBy }}
+      </p>
+    </div>
+  </div>
+</div>
