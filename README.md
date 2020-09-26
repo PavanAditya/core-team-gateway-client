@@ -1,4 +1,6 @@
-# CoreTeamProjectFrontend
+# Core Team Project - Frontend
+
+> (Client) A gateway page made for recording the details of the members joining the core team meeting schedules and zoom sessions conducted online.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
